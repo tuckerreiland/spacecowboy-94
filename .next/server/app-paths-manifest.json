@@ -1,0 +1,6 @@
+{
+  "/page": "app/page.js",
+  "/README.md/page": "app/README.md/page.js",
+  "/mesteno/page": "app/mesteno/page.js",
+  "/forum/page": "app/forum/page.js"
+}

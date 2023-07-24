@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import TileOverlay from "@/lib/effects/transitions/TileOverlay/TileOverlay";
 
-import logo from "../public/next.svg"
+import logo from "../public/SVG/logo-scanlines.svg"
 import Menu from "@/lib/components/menu";
 
 export default function Page() {
@@ -19,17 +19,13 @@ export default function Page() {
 						<Menu/>
 					</div>
 					<div className="row-start-1 col-start-1 justify-self-center">
-						<Link
-							href={'/second-page'}
-						>
-							<Image
-								src={logo}
-								width={500}
-								height={500}
-								alt="asdf"
-							/>
-							<h1 className="font-mono text-3xl">Hello World</h1>
-						</Link>
+						<Image
+							src={logo}
+							width={500}
+							height={500}
+							alt="asdf"
+						/>
+						<h1 className="font-mono italic text-3xl">Hello World!</h1>
 					</div>
 				</div>
 	)

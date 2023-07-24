@@ -9,12 +9,12 @@ import Link from "next/link";
 // import Link from "next/link";
 // import MobileNavbar from "./mobileNavbar";
 
-import logo from "../../public/next.svg"
+import logo from "../../public/SVG/typelogo.svg"
 
 export default function Navbar () {
 	
 	return(
-		<div className="fixed top-0 z-50 flex w-screen flex-row justify-between items-center bg-gray-200">
+		<div className="fixed top-0 z-50 flex w-screen flex-row justify-between items-center bg-gray-300">
 			{/* mobile navbar */}
 			<div className="xl:hidden">
 				{/* <MobileNavbar/> */}
@@ -35,7 +35,7 @@ export default function Navbar () {
 						link = "/"
 					/>
 				</ul> */}
-				<div className="h-fit w-[25%] p-2 m-2">
+				<div className="h-fit p-2 m-2">
 					<Link href={'/'}>
 						<Image src={logo} // Route of the image file
 							width={144}

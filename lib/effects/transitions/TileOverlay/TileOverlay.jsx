@@ -8,7 +8,7 @@ export default function TileOverlay ({grid}) {
 
     const [hidden, setHidden] = React.useState(false)
 
-    const delay = 65*(grid.cols.length + grid.rows.length);
+    const delay = 50*(grid.cols.length + grid.rows.length);
 
     console.log(delay)
 

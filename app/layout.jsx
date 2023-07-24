@@ -14,11 +14,11 @@ export default function RootLayout({ children }) {
        <head>
         <link rel="stylesheet" href="https://use.typekit.net/blx7ido.css"/>
 		  </head>
-      <body className='grid h-screen w-screen items-center box-border border-[5px] border-gray-200 bg-gray-200'>
+      <body className='grid h-screen w-screen items-center box-border border-[5px] border-gray-300 bg-gray-300'>
         <Navbar/>
         {/* <div className='grid w-full h-full bg-yellow-100'>
           <div className='grid col-start-1 row-start-1'> */}
-            {/* remembered I can't click through the layer */}
+            {/* remembered I can't click through the scanlines layer */}
             {/* <div className='w-screen h-[62px]'></div>
             <Scanlines/> */}
             {children}
