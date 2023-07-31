@@ -21,26 +21,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/mesteno/page.js"
     ],
-    "/README.md/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/README.md/page.js"
-    ],
-    "/README.md/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/README.md/layout.js"
-    ],
-    "/forum/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/forum/page.js"
-    ],
-    "/forum/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/forum/layout.js"
-    ],
     "/Shop/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -51,15 +31,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/Shop/layout.js"
     ],
-    "/Contact/layout": [
+    "/Docs/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/Contact/layout.js"
+      "static/chunks/app/Docs/page.js"
     ],
-    "/Contact/page": [
+    "/Docs/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/Contact/page.js"
+      "static/chunks/app/Docs/layout.js"
     ]
   }
 }
