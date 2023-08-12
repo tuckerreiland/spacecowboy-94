@@ -1,6 +1,4 @@
 {
   "/page": "app/page.js",
-  "/mesteno/page": "app/mesteno/page.js",
-  "/Docs/page": "app/Docs/page.js",
-  "/Shop/page": "app/Shop/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }
