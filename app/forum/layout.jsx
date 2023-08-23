@@ -1,4 +1,4 @@
-import TileOverlay from '@/lib/effects/transitions/TileOverlay/TileOverlay'
+import TileOverlay from '../../lib/effects/transitions/TileOverlay/TileOverlay'
 
 // export const metadata = {
 //   title: 'Create Next App',
@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
 }
 
   return (
-      <div className='grid overflow-hidden w-full h-full items-center bg-[#FFF7E9]'>
+      <div className='grid overflow-hidden w-full h-full items-start bg-[#FFF7E9]'>
         <TileOverlay grid={grid}/>
         <div className="row-start-1 col-start-1 justify-self-center bg-[#FFF7E9]">
           {children}

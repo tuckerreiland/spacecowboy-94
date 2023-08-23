@@ -1,9 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
-import TileOverlay from "@/lib/effects/transitions/TileOverlay/TileOverlay";
+import TileOverlay from "../lib/effects/transitions/TileOverlay/TileOverlay";
 
 import logo from "../public/SVG/logo-scanlines.svg"
-import Menu from "@/lib/components/menu";
+import Menu from "../lib/components/menu";
 
 export default function Page() {
 

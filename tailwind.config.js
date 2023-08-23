@@ -16,6 +16,17 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      animation: {
+				'blinking-cursor': 'blink 1s linear infinite',
+			},
+      keyframes: {
+				blink: {
+				  '0%': { opacity:  '100%'},
+				  '49%': { opacity:  '100%'},
+				  '50%': { opacity: '0%'},
+				  '100%': { opacity: '0%'},
+				},
+			},
     },
   },
   plugins: [],

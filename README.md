@@ -27,7 +27,7 @@
                 * createdAt
                 * updatedAt
                 * image
-                * username @unique
+                * username @unique no special values (only letters and numbers, @unique checks uppper/lowercase so can't have spacecowboy and SpaceCowboy (I'll probably reserve spacecowboy for my own personal purposes so there's no shenangians))
                 * forum object
                 * shop object
                 * logbook object
@@ -83,6 +83,90 @@
     1. let shopify handle it
     2. clone order history into user account
 4. 
+
+## UI/UX
+1. SPACECOWBOY-94 OS
+2. forum
+    1. home page ('/')
+        1. Search bar
+        2. create community button/link
+        3. feed (session?custom:general)
+    2. Create community page ('/'r'/create')
+        1. name input
+        2. description input
+        3. guidelines rules input
+        4. Create/Cancel Button
+            1. Cancel (router.back())
+            2. Create 
+                * (useMutation() with @tanstack/react-query in video)
+                * I'm not sure if I want to use axios or not, it is cleaner from a syntax perspective compared to fetch, but it's an external package
+                    * must create a context provider, Josh created a providers.tsx in /ui
+                * Josh makes lib/validators/subreddit.ts using a package called 'zod'
+        5. create communit route.ts
+            1. try/catch block
+                ```
+                    import { getAuthSession } from '@/lib/auth'
+                    import { SubredditValidator } from '@/lib/validators/subreddit'
+                    import { db } from '@/lib/db
+
+                    export async function POST(req: Request) {
+                        try{
+                            const session = await getAuthSession()
+
+                            if (!session?.user) {
+                                return new Response('Unauthorized', { status: 401 })
+                            }
+
+                            const body = await req.json()
+                            const { title } = SubredditValidator.parse(body)
+
+                            const subredditExists = await dv.subreddit.findFirst({
+                                where: {
+                                    name,
+                                }
+                            })
+
+                            if (subredditExists) {
+                                return new Response('Subreddit already exists', { status: 409 })
+                            }
+
+                            const subreddit = await db.subreddit.create({
+                                data:{
+                                    name,
+                                    creatorID: session.user.id
+                                }
+                            })
+
+                            await db.subscription.create({
+                                data: {
+                                    userId: session.user.id,
+                                    subredditId: subreddit.id
+                                }
+                            })
+
+                            return new Response(subreddit.name)
+                        } catch (error) {
+                            if (error isntanceof z.ZodError){
+                                returnn new Response(error.message, { status: 422 })
+                            }
+
+                            return new Response('Could not create subreddit', { status: 500 })
+                        }
+                    }            
+                ```
+    3. community page
+        1. layout.tsx
+            1. general community fetch/display logic here
+            2. date-fns
+        2. page.tsx
+            1. interactivity logic
+                * join/leave
+                * post, etc.
+        3. NotFound.tsx
+
+3. */config.ts
+    * export const INFINITE_SCROLL_PAGINATION_RESULTS = 2
+        
 
 # NOTES
 

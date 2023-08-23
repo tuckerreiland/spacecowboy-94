@@ -1,6 +1,6 @@
-import Navbar from '@/lib/components/navbar'
+import Navbar from '../lib/components/navbar'
 import './globals.css'
-import Scanlines from '@/lib/effects/VFX/Scanlines/Scanlines'
+
 
 export const metadata = {
   title: 'Create Next App',
