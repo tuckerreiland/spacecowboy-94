@@ -595,7 +595,7 @@ video {
   }
 }
 .animate-blinking-cursor {
-  animation: blink 1s linear infinite;
+  animation: blink .9s linear infinite;
 }
 .appearance-none {
   -webkit-appearance: none;
@@ -723,6 +723,12 @@ video {
 }
 .font-light {
   font-weight: 300;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-semibold {
+  font-weight: 600;
 }
 .italic {
   font-style: italic;

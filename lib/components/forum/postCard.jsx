@@ -4,7 +4,7 @@ import React from 'react'
 
 import Link from "next/link"
 
-import CommentCard from "./commentCard"
+import CommentCard from "./CommentCard"
 
 // Takes in a post ID as params
 export default function PostCard({post}) {

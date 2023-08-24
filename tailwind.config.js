@@ -17,7 +17,7 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       animation: {
-				'blinking-cursor': 'blink 1s linear infinite',
+				'blinking-cursor': 'blink .9s linear infinite',
 			},
       keyframes: {
 				blink: {

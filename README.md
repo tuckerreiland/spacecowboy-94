@@ -167,6 +167,10 @@
 3. */config.ts
     * export const INFINITE_SCROLL_PAGINATION_RESULTS = 2
         
+## Component Docs
+### /lib/components/forum/terminal
+1. operates like a terminal would, tab autocompletes, down arrow brings to end of selection
+2. come up with commands
 
 # NOTES
 

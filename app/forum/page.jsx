@@ -1,8 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import PostCard from "../../lib/components/forum/postCard"
-import SearchInput from "../../lib/components/forum/searchInput"
+import PostCard from "../../lib/components/forum/PostCard"
+import Terminal from "../../lib/components/forum/terminal/Terminal"
 
 // TODO: decide if I want posts to be nested under a board by default, would make file structure [board]/[post]
 
@@ -122,7 +122,7 @@ export default function Page() {
 
 	return (
         <div className="grid">
-            <SearchInput/>
+            <Terminal/>
             <div className="grid overflow-hidden w-full h-full items-center">
             <div className="row-start-1 col-start-1 justify-self-center">
                 {posts.map((post)=> {

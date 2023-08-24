@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import PostCard from "@/lib/components/forum/postCard"
+import PostCard from "../../../../lib/components/forum/PostCard"
 
 // Takes in a post ID as params and the query to fetch the post
 export default function Page({postId}) {
