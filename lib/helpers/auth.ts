@@ -13,6 +13,7 @@ export const authOptions: NextAuthOptions = {
     signIn: '/sign-in',
   },
   providers: [
+    // TODO: add in an email/custom credential log in option
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
@@ -63,6 +64,7 @@ export const authOptions: NextAuthOptions = {
       }
     },
     redirect() {
+      // TODO: need to redirect to the last page the user was on when they decided to sign in
       return '/'
     },
   },

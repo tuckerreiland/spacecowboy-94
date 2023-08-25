@@ -1,4 +1,3 @@
 {
-  "/(auth)/sign-in/page": "app/(auth)/sign-in/page.js",
-  "/cantinet/page": "app/cantinet/page.js"
+  "/(auth)/log-in/page": "app/(auth)/log-in/page.js"
 }

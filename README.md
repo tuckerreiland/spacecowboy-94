@@ -1,5 +1,8 @@
 # SPACECOWBOY-94
 
+## TODO
+1. update OAuth user support email & dev email, provide production url
+
 ## Stack
 ### Frontend
 1. NextJS
