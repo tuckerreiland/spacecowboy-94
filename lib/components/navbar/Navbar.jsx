@@ -16,14 +16,14 @@ const Navbar = async () => {
 	const session = await getAuthSession()
 
 	return(
-		<div className="fixed top-0 z-50 flex w-screen flex-row justify-between items-center bg-gray-300">
+		<div className="fixed top-0 z-50 max-h-12 px-[10px] py-[10px] flex w-screen flex-row justify-between items-center bg-gray-300">
 			{/* mobile navbar */}
 			<div className="xl:hidden">
 				{/* <MobileNavbar/> */}
 			</div>
 			{/* desktop navbar */}
 			<div className="w-screen grid grid-cols-2 grid-rows-1 justify-between items-center">
-				<div className="h-fit p-2 m-2">
+				<div className="h-fit">
 					<Link href={'/'}>
 						<Image src={logo} // Route of the image file
 							width={100}
@@ -33,9 +33,9 @@ const Navbar = async () => {
 					</Link>
 						
 				</div>
-				<div className="justify-self-end m-2 p-2">
-					{session?
-						<UserAccountNav />
+				<div className="justify-self-end">
+					{session?.user?
+						<UserAccountNav user={session.user}/>
 					:
 						<div>
 							<Link href='/sign-in' className="">

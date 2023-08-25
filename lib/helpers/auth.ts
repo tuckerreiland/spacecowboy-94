@@ -10,7 +10,7 @@ export const authOptions: NextAuthOptions = {
     strategy: 'jwt',
   },
   pages: {
-    signIn: '/sign-in',
+    signIn: '/log-in',
   },
   providers: [
     // TODO: add in an email/custom credential log in option

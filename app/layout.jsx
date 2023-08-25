@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
        <head>
         <link rel="stylesheet" href="https://use.typekit.net/blx7ido.css"/>
 		  </head>
-      <body className='grid h-screen w-screen items-center box-border border-[5px] border-gray-300 bg-gray-300'>
+      <body className='grid h-screen w-screen items-center box-border border-x-[5px] border-b-[5px] border-gray-300 bg-gray-300'>
         <Navbar/>
             <div className='pt-12 h-full'>
               {children}

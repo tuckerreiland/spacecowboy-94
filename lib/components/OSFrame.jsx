@@ -1,11 +1,3 @@
-'use client';
-
-import Image from "next/image";
-
-// import NavbarButton from "../buttons/navbarButton";
-import Link from "next/link";
-// import MobileNavbar from "./mobileNavbar";
-
 export default function OSFrame () {
 	
 	return(
