@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
 		  </head>
       <body className='grid h-screen w-screen items-center box-border border-[5px] border-gray-300 bg-gray-300'>
         <Navbar/>
-            <div className='pt-14 h-full'>
+            <div className='pt-12 h-full'>
               {children}
             </div>
       </body>

@@ -265,6 +265,8 @@ export const getAuthSession = () => getServerSession(authOptions)
 #### Icons
 Lucide Icons
 #### cn Utility function
+<!-- IMPORTANT: use for conditional classes -->
+
 Allows passing in conditional classes
 
 1. tailwind-merge

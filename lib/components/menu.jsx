@@ -29,7 +29,7 @@ export default function Menu() {
             logo:logo
         }, 
         {
-            name:'forum',
+            name:'cantinet',
             logo:logo
         }, 
         {

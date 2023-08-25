@@ -1,20 +1,25 @@
 {
   "pages": {
-    "/forum/page": [
+    "/cantinet/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/forum/page.js"
+      "static/chunks/app/cantinet/page.js"
     ],
-    "/forum/layout": [
+    "/cantinet/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/forum/layout.js"
+      "static/chunks/app/cantinet/layout.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
+    ],
+    "/(auth)/sign-in/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(auth)/sign-in/page.js"
     ]
   }
 }

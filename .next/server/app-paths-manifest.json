@@ -1,3 +1,4 @@
 {
-  "/forum/page": "app/forum/page.js"
+  "/(auth)/sign-in/page": "app/(auth)/sign-in/page.js",
+  "/cantinet/page": "app/cantinet/page.js"
 }
