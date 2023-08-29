@@ -38,10 +38,10 @@ const Navbar = async () => {
 						<UserAccountNav user={session.user}/>
 					:
 						<div>
-							<Link href='/sign-in' className="">
+							<Link href='/sign-up' className="">
 								Sign Up
 							</Link>
-							<Link href='/sign-in' className="">
+							<Link href='/log-in' className="">
 								Log In
 							</Link>
 						</div>
