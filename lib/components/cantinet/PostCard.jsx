@@ -15,12 +15,12 @@ export default function PostCard({post}) {
             <Link
                 href={`forum/post/${post.postId}`}
             >
-               <h2 className="text-4xl">{post.title}</h2>
+               <h2 className="text-2xl">{post.title}</h2>
             </Link>
             <Link
                 href={''}
             >
-                <h3 className="text-l">{post.user}</h3>
+                <h3 className="">{post.user}</h3>
             </Link>
             {/* TODO: insert dynamic HTML */}
             <div className="">{post.body}</div>

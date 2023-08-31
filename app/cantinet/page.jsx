@@ -4,6 +4,8 @@ import Link from "next/link"
 import PostCard from "../../lib/components/cantinet/PostCard"
 import Terminal from "../../lib/components/cantinet/terminal/Terminal"
 
+import MenuButton from "../../lib/components/navbar/MenuButton"
+
 // TODO: decide if I want posts to be nested under a board by default, would make file structure [board]/[post]
 
 export default function Page() {
@@ -121,16 +123,28 @@ export default function Page() {
     ]
 
 	return (
-        <div className="grid">
-            <Terminal/>
-            <div className="grid overflow-hidden w-full h-full items-center">
-            <div className="row-start-1 col-start-1 justify-self-center">
-                {posts.map((post)=> {
-                    return(
-                            <PostCard key={post.postId} post={post}/>
-                    )
-                })}
-            </div>
+        // <div className="grid">
+        //     <Terminal/>
+        //     <div className="grid overflow-hidden w-full h-full items-center">
+        //     <div className="row-start-1 col-start-1 justify-self-center">
+        //         {posts.map((post)=> {
+        //             return(
+        //                     <PostCard key={post.postId} post={post}/>
+        //             )
+        //         })}
+        //     </div>
+        //     </div>
+        // </div>
+        <div>
+            <h1 className="font-bold text-3xl">Your Feed</h1>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4 py-6">
+                {/* Feed */}
+                {/* Cantinet Info */}
+                <MenuButton
+                    name="Create Cantinet"
+                    link="/cantinet/create"
+                    style=""
+                />
             </div>
         </div>
        

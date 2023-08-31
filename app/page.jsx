@@ -15,7 +15,7 @@ export default function Page() {
 	return (
 		<div className="grid row-start-1 col-start-1 overflow-hidden w-full h-full items-center bg-yellow-100">
 			<TileOverlay grid={grid}/>
-			<div className="row-start-1 col-start-1 justify-self-start z-10 w-1/3 h-full "> 
+			<div className="row-start-1 col-start-1 justify-self-start w-1/3 h-full z-10"> 
 				<Menu/>
 			</div>
 			<div className="row-start-1 col-start-1 justify-self-center">
