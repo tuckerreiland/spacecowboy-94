@@ -1,5 +1,6 @@
 import Navbar from '../lib/components/navbar/Navbar'
 import OSFrame from '../lib/components/OSFrame'
+import Providers from '../lib/providers/Providers'
 import './globals.css'
 
 
@@ -23,13 +24,15 @@ export default function RootLayout({
 		  </head>
       <body className='grid h-screen w-screen items-center'>
         {/*  box-border border-x-[5px] border-b-[5px] border-gray-300 bg-gray-300 */}
-        <OSFrame>
-          <Navbar/>
-            <div className='grid grid-cols-1 grid-rows-1 h-full w-full pt-[34px] '>
-              {authModal}
-              {children}
-            </div>
-        </OSFrame>
+        <Providers>
+          <OSFrame>
+            <Navbar/>
+              <div className='grid grid-cols-1 grid-rows-1 h-full w-full pt-[48px] '>
+                {authModal}
+                {children}
+              </div>
+          </OSFrame>
+        </Providers>
       </body>
     </html>
   )

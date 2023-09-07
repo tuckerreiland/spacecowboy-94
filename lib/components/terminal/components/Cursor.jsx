@@ -1,4 +1,4 @@
-import BlinkingCursor from '../../../../effects/BlinkingCursor'
+import BlinkingCursor from '../../../effects/BlinkingCursor'
 
 const Cursor = ({ blink, cursors, searchInput }) => {
     return(

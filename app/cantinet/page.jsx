@@ -7,6 +7,7 @@ import Terminal from "../../lib/components/cantinet/terminal/Terminal"
 import MenuButton from "../../lib/components/navbar/MenuButton"
 
 // TODO: decide if I want posts to be nested under a board by default, would make file structure [board]/[post]
+// TODO: Rename file and refactor with space cowboy/cantinet proper terminology
 
 export default function Page() {
 

@@ -1,1 +1,5 @@
-{}
+{
+  "/page": "app/page.js",
+  "/cantinet/[slug]/page": "app/cantinet/[slug]/page.js",
+  "/cantinet/[slug]/submit/page": "app/cantinet/[slug]/submit/page.js"
+}

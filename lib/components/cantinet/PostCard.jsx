@@ -20,10 +20,9 @@ export default function PostCard({post}) {
             <Link
                 href={''}
             >
-                <h3 className="">{post.user}</h3>
+                <h3 className="">{post.author.name}</h3>
             </Link>
-            {/* TODO: insert dynamic HTML */}
-            <div className="">{post.body}</div>
+            {console.log(post.content.blocks)}
             {post.comments.length>0?
                 <div className="">
                     {post.comments.length>1?
