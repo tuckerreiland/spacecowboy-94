@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.17",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "eslint": "8.48.0",
@@ -23,7 +24,6 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@types/editorjs__header": "^2.6.0",
     "@types/node": "20.5.1",
     "@types/react": "18.2.20",
     "prisma": "^5.2.0"

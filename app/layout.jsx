@@ -1,5 +1,10 @@
-import './globals.css'
+import Header from '@/lib/components/global/Header'
+import Main from '@/lib/components/global/Main'
 
+import './globals.css'
+import Footer from '@/lib/components/global/Footer'
+import { cn } from '@/lib/utils'
+import { styles } from '@/lib/styles'
 
 export const metadata = {
   title: 'Create Next App',
@@ -8,19 +13,19 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-  authModal,
 }) {
 
   return (
     <html lang="en">
-       <head>
+      <head>
         <link rel="stylesheet" href="https://use.typekit.net/blx7ido.css"/>
 		  </head>
-      <body className='grid h-screen w-screen items-center'>
-          <div className='grid grid-cols-1 grid-rows-1 h-full w-full pt-[48px] '>
-            {authModal}
-            {children}
-          </div>
+      <body className={cn(styles.colors)}>
+        <Header/>
+        <Main>          
+          {children}
+        </Main>
+        <Footer/>
       </body>
     </html>
   )
