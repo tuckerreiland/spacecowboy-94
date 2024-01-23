@@ -1,1 +1,0 @@
-// TODO: Rename file and refactor with space cowboy/cantinet proper terminology
