@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npx prisma db push && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.7.0",
+    "prisma": "^5.7.0",
     "autoprefixer": "^10.4.17",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
