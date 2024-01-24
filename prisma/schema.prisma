@@ -1,3 +1,9 @@
+// TODO: 
+  // - figure out how to get the slug to self reference the title so that it can be referenced in the url instead of the id
+  // - slug wouldn't necessarily need to be a value in the schema, I can make that with my toKebabCase function
+
+// NOTES:
+  // - use implicit relationships unless it's necessary to store metadata
 generator client {
   provider = "prisma-client-js"
 }
@@ -18,20 +24,21 @@ model User {
 }
 
 model Post {
-    id        String @id @default(cuid())
-    title     String
+    id        String @default(cuid())
+    title     String @unique
+    slug      String @id
     content   Json?
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-    // blogCollection BlogCollection @relation(fields: [blogCollectionId], references: [id])
-    // blogCollectionId String
+    collections BlogCollection[]
 }
 
-// model BlogCollection {
-//     id        String   @id @default(cuid())
-//     title     String
-//     posts     Post[]
-// }
+model BlogCollection {
+    id        String  @default(cuid())
+    title     String @unique
+    slug      String @id
+    posts     Post[]
+}
 
 model Product {
     id        String @id @default(cuid())
