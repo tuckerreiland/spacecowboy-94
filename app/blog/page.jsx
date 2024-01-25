@@ -1,10 +1,11 @@
-export default function Page() {
+import { serverFetch } from "@/lib/fetch/server-fetch"
 
+export default async function Page() {
+	const posts = await serverFetch('posts')
+	console.log(posts)
 	return (
-		<div>
-			<div className="h-screen">
-				<h1>Blog</h1>
-			</div>
+		<div className="h-full">
+			<h1>Blog</h1>
 		</div>
 	)
   }

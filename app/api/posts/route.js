@@ -15,17 +15,27 @@ export async function GET() {
 export async function POST(req) {
     try {
         const data = await req.json()
-        const res = await db.post.create({
-            data:{
+        const create = {
+            data: {
                 ...data,
                 slug: toKebabCase(data.title),
-                collections: {
-                    connect: data.collections.map((collection)=> {
-                        return {slug: collection}
-                    })
-                }
             }
-        })
+        }
+        if (data.collections){
+            create.data.collections = {
+                connect: data.collections.map((collection)=> {
+                    return {id: collection}
+                })
+            }
+        }
+        if (data.tags){
+            create.data.tags = {
+                connect: data.tags.map((tag)=> {
+                    return {id: tag}
+                })
+            }
+        }
+        const res = await db.post.create(create)
         return Response.json(res)
     } catch (error) {
         console.log(error)

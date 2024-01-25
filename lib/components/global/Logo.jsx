@@ -9,7 +9,7 @@ console.log(logo)
 const Logo = ({style, width, height}) => {
   return (
     <div
-        className={cn(styles.logo, style)}
+        className={cn(styles.logo.style, style)}
     >
         <Image
             src={logo.src}

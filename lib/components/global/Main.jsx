@@ -4,7 +4,7 @@ import { styles } from "@/lib/styles";
 const Main = ({children, style}) => {
   return (
     <main
-        className={cn(styles.main, style)}
+        className={cn(styles.main.style, style)}
     >
         {children}
     </main>

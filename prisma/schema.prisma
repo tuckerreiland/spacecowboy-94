@@ -15,43 +15,92 @@ datasource db {
 }
 
 model User {
-    id                String @id @default(cuid())
-    name              String?
-    email             String? @unique
-    emailVerified     DateTime?
-    username          String? @unique
-    image             String?
+  id                String @id @default(cuid())
+  name              String?
+  email             String? @unique
+  emailVerified     DateTime?
+  username          String? @unique
+  image             String?
+}
+
+model Collection {
+  id        String @id @default(cuid())
+  title     String @unique
+  slug      String 
+  posts     Post[]
+  products  Product[]
+}
+
+model Tag {
+  id        String @id @default(cuid())
+  name     String @unique
+  slug      String 
+  posts     Post[]
+  products  Product[]
 }
 
 model Post {
-    id        String @default(cuid())
-    title     String @unique
-    slug      String @id
-    content   Json?
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-    collections BlogCollection[]
-}
-
-model BlogCollection {
-    id        String  @default(cuid())
-    title     String @unique
-    slug      String @id
-    posts     Post[]
+  id        String @id @default(cuid())
+  title     String @unique
+  slug      String 
+  content   Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  collections Collection[]
+  tags Tag[]
 }
 
 model Product {
-    id        String @id @default(cuid())
-    title     String
-    content   Json?
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-    shopCollection ShopCollection @relation(fields: [shopCollectionId], references: [id])
-    shopCollectionId String
+  id        String @id @default(cuid())
+  name     String @unique
+  slug     String
+  price     Float
+  quantity  Int?
+  variants Variant[]
+  description   Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  collection Collection[]
+  tags Tag[]
 }
 
-model ShopCollection {
-    id        String   @id @default(cuid())
-    title     String
-    products  Product[]
+model Variant {
+  id    String @id @default(cuid())
+  name  String
+  slug  String
+  quantity Int
+  // barcode String @unique
+  sizes Size[]
+  colors Color[]
+  options Option[]
+  products Product[]
+}
+
+model Size {
+  // TODO:
+  // - refactor to enable pant size matrix
+  id    String @id @default(cuid())
+  name  String
+  quantity Int
+  variants Variant[]
+  colors Color[]
+  options Option[]
+}
+
+model Color {
+  id        String @id @default(cuid())
+  name  String
+  quantity Int
+  variants Variant[]
+  sizes Size[]
+  options Option[]
+}
+
+model Option {
+  id        String @id @default(cuid())
+  name  String
+  quantity Int
+  variants Variant[]
+  sizes Size[]
+  colors Color[]
 }

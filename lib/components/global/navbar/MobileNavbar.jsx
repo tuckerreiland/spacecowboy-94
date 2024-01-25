@@ -15,7 +15,7 @@ const MobileNavbar = ({style}) => {
     }
     
   return (
-    <div className={cn(styles.mobileNavbar, style)}>
+    <div className={cn(styles.mobileNavbar.style, style)}>
         <Button
             name='MobileNavbar'
             style={cn(active?'bg-blue-500':'bg-yellow-500', 'justify-self-end')}

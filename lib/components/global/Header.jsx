@@ -7,7 +7,7 @@ import Logo from "./Logo";
 const Header = ({style}) => {
   return (
     <header 
-        className={cn(styles.header, style)}
+        className={cn(styles.header.style, style)}
     >  
         <Logo
             style={''}

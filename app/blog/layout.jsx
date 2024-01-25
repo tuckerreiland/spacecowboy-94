@@ -8,7 +8,7 @@ export const metadata = {
   }) {
   
     return (
-      <div>
+      <div className="h-full">
         {children}
       </div>
     )

@@ -1,21 +1,24 @@
 import { cn } from "@/lib/utils"
 import { styles } from "@/lib/styles";
 
-import Button from "../Button";
+import NavButton from "./NavButton";
 
 const DesktopNavbar = ({style}) => {
   return (
-    <div className={cn(styles.desktopNavbar, style)}>
-        <Button
-            name='nav button'
+    <div className={cn(styles.desktopNavbar.style, style)}>
+        <NavButton
+            name='Shop'
+            link='/shop'
             style={'w-fit'}
         />
-        <Button
-            name='nav button'
+        <NavButton
+            name='Blog'
+            link='/blog'
             style={'w-fit'}
         />
-        <Button
-            name='nav button'
+        <NavButton
+            name='Log In'
+            link='/log-in'
             style={'w-fit'}
         />
     </div>

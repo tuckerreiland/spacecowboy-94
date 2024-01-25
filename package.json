@@ -9,8 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@prisma/client": "^5.7.0",
-    "prisma": "^5.7.0",
+    "@prisma/client": "^5.8.1",
     "autoprefixer": "^10.4.17",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
@@ -28,6 +27,6 @@
   "devDependencies": {
     "@types/node": "20.5.1",
     "@types/react": "18.2.20",
-    "prisma": "^5.2.0"
+    "prisma": "^5.8.1"
   }
 }

@@ -20,7 +20,10 @@ module.exports = {
     'top-0',        'overflow-scroll',
     'max-w-50',
     'self-end',
-    'w-screen'
+    'w-screen',
+    {
+      pattern: /bg|text|border|grid|h|w|p|t|top|right|left|bottom-./
+    },
   ],
   theme: {
     extend: {

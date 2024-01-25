@@ -12,7 +12,7 @@ const Navbar = ({style}) => {
     'Nav Link',
   ]
   return (
-    <div className={cn(styles.navbar, style)}>
+    <div className={cn(styles.navbar.style, style)}>
         <MobileNavbar
           style={'md:hidden'}
         />

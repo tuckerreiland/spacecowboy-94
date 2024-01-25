@@ -4,7 +4,7 @@ import { styles } from "@/lib/styles";
 const Dropdown = ({style}) => {
   return (
     <div 
-        className={cn(styles.dropdown, style)}
+        className={cn(styles.dropdown.style, style)}
     >
         Dropdown
     </div>

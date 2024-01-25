@@ -4,7 +4,7 @@ import { styles } from "@/lib/styles";
 const Footer = ({style}) => {
   return (
     <footer 
-        className={cn(styles.footer, style)}
+        className={cn(styles.footer.style, style)}
     >
       Footer
     </footer>

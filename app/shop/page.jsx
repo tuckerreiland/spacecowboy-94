@@ -1,10 +1,12 @@
-export default function Page() {
+import ProductList from "@/lib/components/shop/ProductList"
+import { serverFetch } from "@/lib/fetch/server-fetch"
 
+export default async function Page() {
+	const products = await serverFetch('products')
 	return (
-		<div>
-			<div className="h-screen">
-				<h1>Shop</h1>
-			</div>
+		<div className="h-full">
+			<h1>Shop</h1>
+			<ProductList products={products}/>
 		</div>
 	)
   }
