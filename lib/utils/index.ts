@@ -38,6 +38,9 @@ export function formatDate (date) {
   return format(new Date(date), 'yyyy-MM-dd')
 }
 
-export function formatCurrency () {
-  // TODO: currency formatter
+export function formatCurrency (locale, currency, price) {
+  return new Intl.NumberFormat(locale||'en-US', {
+    style: 'currency',
+    currency: currency||'USD',
+  }).format(price)
 }

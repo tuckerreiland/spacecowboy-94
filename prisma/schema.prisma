@@ -26,7 +26,7 @@ model User {
 model Collection {
   id        String @id @default(cuid())
   title     String @unique
-  slug      String 
+  slug      String @unique
   posts     Post[]
   products  Product[]
 }
@@ -34,7 +34,7 @@ model Collection {
 model Tag {
   id        String @id @default(cuid())
   name     String @unique
-  slug      String 
+  slug      String @unique
   posts     Post[]
   products  Product[]
 }
@@ -42,7 +42,7 @@ model Tag {
 model Post {
   id        String @id @default(cuid())
   title     String @unique
-  slug      String 
+  slug      String @unique
   content   Json?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -53,21 +53,21 @@ model Post {
 model Product {
   id        String @id @default(cuid())
   name     String @unique
-  slug     String
+  slug     String @unique
   price     Float
   quantity  Int?
   variants Variant[]
   description   Json?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  collection Collection[]
+  collections Collection[]
   tags Tag[]
 }
 
 model Variant {
   id    String @id @default(cuid())
-  name  String
-  slug  String
+  name  String @unique
+  slug  String @unique
   quantity Int
   // barcode String @unique
   sizes Size[]
@@ -80,7 +80,7 @@ model Size {
   // TODO:
   // - refactor to enable pant size matrix
   id    String @id @default(cuid())
-  name  String
+  name  String 
   quantity Int
   variants Variant[]
   colors Color[]

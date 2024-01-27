@@ -11,7 +11,7 @@ const NavButton = ({
 
   return (
     <Link
-      className={cn(styles.navButton.style,  style)}
+      className={cn(styles.navButton.style, style)}
       href={link}
       >
         {name||children}

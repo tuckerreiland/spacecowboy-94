@@ -2,7 +2,7 @@ import Header from '@/lib/components/global/Header'
 import Main from '@/lib/components/global/Main'
 
 import './globals.css'
-import Footer from '@/lib/components/global/Footer'
+import Footer from '@/lib/components/global/footer/Footer'
 import { cn } from '@/lib/utils'
 import { styles } from '@/lib/styles'
 

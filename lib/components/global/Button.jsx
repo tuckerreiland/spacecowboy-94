@@ -1,10 +1,7 @@
-/**
- TODO:
-    - Handle 'selected', 'active' state
- */
+'use client';
+
 import { cn } from "@/lib/utils"
 import { styles } from "@/lib/styles";
-import { Link } from "lucide-react";
 
 const Button = ({
     children,
@@ -14,10 +11,15 @@ const Button = ({
     style
 }) => {
 
+  const onClick = (e) => {
+    e.preventDefault()
+    return action()
+  }
+
   return (
     <button
         className={cn(styles.button.style, style)}
-        onClick={action?action:null}
+        onClick={(e)=>onClick(e)}
         form={form?form:null}
     >
         {name||children}
