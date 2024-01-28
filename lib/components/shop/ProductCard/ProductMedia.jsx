@@ -14,12 +14,13 @@ const ProductMedia = ({src}) => {
           'relative'
         )}
       >
-        <Image
+        <img
             src={src?src:'https://placedog.net/300/200'}
-            width={0}
-            height={0}
             sizes="100vw"
-            style={{ width: '100%', height: 'auto' }}
+            className={cn(
+              'w-full',
+              'h-auto'
+            )}
           />
       </div>
   )

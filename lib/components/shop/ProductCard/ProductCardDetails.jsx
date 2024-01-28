@@ -12,7 +12,7 @@ const ProductCardDetails = ({product}) => {
       <h4
         className={cn(styles.productCard.price)}
       >
-        {formatCurrency('', '', product.price)}
+        {formatCurrency(product.price)}
       </h4>
     </div>
   )

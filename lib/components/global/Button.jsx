@@ -8,7 +8,7 @@ const Button = ({
     name,
     action,
     form,
-    style
+    className
 }) => {
 
   const onClick = (e) => {
@@ -18,7 +18,7 @@ const Button = ({
 
   return (
     <button
-        className={cn(styles.button.style, style)}
+        className={cn(styles.button.style, className)}
         onClick={(e)=>onClick(e)}
         form={form?form:null}
     >
