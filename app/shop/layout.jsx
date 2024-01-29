@@ -8,7 +8,7 @@ export const metadata = {
   }) {
   
     return (
-      <div className="h-full">
+      <div className="h-full w-screen">
         {children}
       </div>
     )
