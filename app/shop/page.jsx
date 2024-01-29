@@ -1,12 +1,13 @@
-import ProductList from "@/lib/components/shop/ProductList"
+
+import CollectionList from "@/lib/components/global/collection/CollectionList"
 import { serverFetch } from "@/lib/fetch/server-fetch"
 
 export default async function Page() {
-	const products = await serverFetch('products')
+	const collections = await serverFetch('collections')
 	return (
 		<div className="h-full w-full">
 			<h1>Shop</h1>
-			<ProductList products={products}/>
+			<CollectionList collections={collections}/>
 		</div>
 	)
   }

@@ -4,14 +4,19 @@ import { toKebabCase } from "@/lib/utils"
 import { db } from "@/prisma"
 
 export async function GET(req, {params}) {
-    const id = params.id
+    const slug = params.slug
     try {
-        const res = await db.blogCollection.findUnique({
+        const res = await db.collection.findUnique({
             where: {
-                id: id
+                slug: slug
             },
             include:{
                 posts: {
+                    include: {
+                        collections: true
+                    }
+                },
+                products: {
                     include: {
                         collections: true
                     }
@@ -26,12 +31,12 @@ export async function GET(req, {params}) {
 }
 
 export async function PUT(req, {params}) {
-    const id = params.id
+    const slug = params.slug
     try {
         const data = await req.json()
         const update = {
             where: {
-                id: id
+                slug: slug
             },
             data:{
                 ...data,
@@ -74,7 +79,7 @@ export async function PUT(req, {params}) {
                 })
             }
         }
-        const res = await db.blogCollection.update(update)
+        const res = await db.collection.update(update)
         return Response.json(res)
     } catch (error) {
         console.log(error)
@@ -83,7 +88,7 @@ export async function PUT(req, {params}) {
 }
 
 export async function DELETE(req, {params}) {
-    const id = params.id
+    const slug = params.slug
     try {
         const posts = await db.post.findMany({
             where:{
@@ -94,9 +99,9 @@ export async function DELETE(req, {params}) {
                 }
             },
         })
-        await db.blogCollection.update({
+        await db.collection.update({
             where: {
-                id: id
+                slug: slug
             },
             data: {
                 posts: {
@@ -107,9 +112,9 @@ export async function DELETE(req, {params}) {
                 },
             }
         })
-        const res = await db.blogCollection.delete({
+        const res = await db.collection.delete({
             where: {
-                id: id
+                slug: slug
             }
         })
         return Response.json(res)

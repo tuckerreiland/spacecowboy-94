@@ -5,7 +5,7 @@ import { db } from "@/prisma"
 
 export async function GET() {
     try {
-        const res = await db.blogCollection.findMany()
+        const res = await db.collection.findMany()
         return Response.json(res)
     } catch (error) {
         return Response.json({error})
@@ -42,7 +42,7 @@ export async function POST(req) {
                 })
             }
         }
-        const res = await db.tag.create(create)
+        const res = await db.collection.create(create)
         return Response.json(res)
     } catch (error) {
         console.log(error)

@@ -1,12 +1,10 @@
-'use client';
 import { cn, formatCurrency } from "@/lib/utils";
 
 import { Star } from "lucide-react";
 
 import Link from "next/link";
-import Button from "../../global/Button";
-import { useState } from "react";
 import ProductInfo from "./ProductInfo/ProductInfo";
+import ProductPageActions from "./ProductPageActions/ProductPageActions";
 
 
 
@@ -108,9 +106,6 @@ const ProductPage = ({product, style}) => {
     }
   }
 
-  const [selectedVariant, setSelectedVariant] = useState(variants[0].name)
-  const [selectedSize, setSelectedSize] = useState('')
-
   const heroImage = 'https://placedog.net/600/900'
   const images = [
     'https://placedog.net/200/300',
@@ -130,9 +125,15 @@ const ProductPage = ({product, style}) => {
         <div 
           className="md:flex relative justify-between"
         >
+          {/* <ProductImages/> */}
+          <div
+            className={cn(
+              'pt-12'
+            )}
+          >
           {/* <ProductImageSlider/> */}
             <div className={cn(
-              "flex gap-1.5 md:flex-col-reverse lg:flex-row sticky h-fit min-w-fit w-full md:w-2/3 md:pr-8",
+              "flex gap-1.5 md:flex-col-reverse lg:flex-row lg:sticky h-fit min-w-fit w-full md:w-2/3 md:pr-8",
               // This top needs to be site header plus ProductHeroImages padding-top
               'top-24'
               )}>
@@ -171,6 +172,7 @@ const ProductPage = ({product, style}) => {
                 />
               </div>
             </div>
+          </div>
           {/* <ProductInfo/> */}
           <div className={cn(
             'bg-pink-500',
@@ -178,7 +180,7 @@ const ProductPage = ({product, style}) => {
             'min-h-[300px]',
             'w-full',
             'md:w-1/3',
-            'pt-12'
+            'lg:pt-12'
           )}>
             {/* <ProductHeader/> */}
             <div className={cn(
@@ -242,167 +244,13 @@ const ProductPage = ({product, style}) => {
                 >{formatCurrency(product.price)}</p>
               </div>
             </div>
-            {/* product.variants&&<ProductVariants/> */}
-              <div
-                className={cn(
-                  'my-5'
-                )}
-              >
-                <span>
-                  {selectedVariant||'No Variant selected'}
-                </span>
-                <div
-                  className={cn(
-                    'my-2',
-                    'flex',
-                    'flex-wrap',
-                    'justify-start'
-                  )}
-                >
-                  {variants.map((variant)=>{
-                    return (
-                      <label
-                        onClick={()=>setSelectedVariant(variant.name)}
-                        className={cn(
-                          'mb-1.5',
-                          'mr-1.5',
-                          'basis-auto',
-                          'grow-0',
-                          'shrink'
-                        )}
-                      >
-                        <span
-                          className={cn(
-                            'p-[3px]',
-                            'w-10',
-                            'h-10',
-                            'block',
-                            'rounded',
-                            'border-[1px]',
-                            'border-green-500',
-                            `${selectedVariant===variant.name?'border-opacity-100':'border-opacity-0 hover:border-opacity-50'}`
-                          )}
-                        >
-                          <span
-                            className={cn(
-                              'block',
-                              'w-8',
-                              'h-8',
-                              'overflow-hidden',
-                              'bg-auto',
-                              'bg-repeat',
-                              'bg-origin-padding',
-                              'bg-clip-border',
-                              'bg-scroll',
-                              'bg-none',
-                              'rounded-sm',
-                              
-                            )}
-                          >
-                            <img 
-                              sizes="100vw"
-                              className={cn(
-                                'inline',
-                                'relative',
-                                'object-cover',
-                                'overflow-clip',
-                                '[overflow-clip-margin: border-box;]',
-                                'aspect-auto',
-                                'object-left-top',
-                                'max-w-none'
-                              )}
-                              src={variant.image} 
-                              alt={variant.name} 
-                            />
-                          </span>
-                        </span>
-                      </label>
-                    )
-                  })}
-                </div>
-              </div>
-            {/* product.sizes&&<ProductSizes/> */}
-            <div
-                className={cn(
-                  'my-5'
-                )}
-              >
-                <span>
-                  {selectedSize||'Select a size'}
-                </span>
-                <div
-                  className={cn(
-                    'my-2',
-                    'flex',
-                    'flex-wrap',
-                    'justify-start',
-                  )}
-                >
-                  {sizes.map((size)=>{
-                    return (
-                      <label
-                        onClick={()=>setSelectedSize(size.quantity===0?'Unavailable':size.name)}
-                        className={cn(
-                          'mb-1.5',
-                          'mr-1.5',
-                          'basis-auto',
-                          'grow-0',
-                          'shrink'
-                        )}
-                      >
-                        <span
-                          className={cn(
-                            'p-[3px]',
-                            'w-10',
-                            'h-10',
-                            'block',
-                            'rounded',
-                            'border-[1px]',
-                            'border-green-500',
-                            `${selectedSize===size.name?'border-opacity-100':'border-opacity-0 hover:border-opacity-50'}`
-                          )}
-                        >
-                          <span
-                            className={cn(
-                              'w-8',
-                              'h-8',
-                              'text-center',
-                              'rounded-sm',
-                              'flex',
-                              'justify-center',
-                              'items-center'
-                            )}
-                          >
-                            <p
-                              className={cn(
-                                'w-fit',
-                                'h-fit',
-                                `${size.quantity===0?'opacity-50':'opacity-100'}`
-                              )}
-                            >
-                              {size.name}
-                            </p>
-                          </span>
-                        </span>
-                      </label>
-                    )
-                  })}
-                </div>
-              </div>
-            {/* <ProductPageActions/> */}
-              <Button
-                className={cn(
-                  'w-full',
-                  'bg-teal-500',
-                  'rounded',
-                  'mb-3',
-                  'py-4',
-                  'px-5'
-                )}
-                name={'Add To Cart'}
-                action={console.log('Add To Cart')}
-              />
-              <ProductInfo productInfo={productInfo}/>
+            <ProductPageActions 
+              variants={variants}
+              sizes={sizes}
+              actions={product.actions}
+            />
+
+            <ProductInfo productInfo={productInfo}/>
           </div>
         </div>
     </div>
