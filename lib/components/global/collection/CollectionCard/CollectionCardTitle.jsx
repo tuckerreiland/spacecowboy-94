@@ -1,12 +1,18 @@
-import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-const CollectionCardTitle = ({title, slug}) => {
+const CollectionCardTitle = ({position, index, title}) => {
   return (
-    <Link
-        href={`collection/${slug}`}
+    <h2
+      className={cn(
+        'text-2xl',
+        'lg:row-start-1',
+        'lg:col-start-1',
+        'col-span-2',
+        `${position<=2?'':`lg:col-span-1 ${index%2!==0?'lg:col-start-3 text-right':''}`}`
+      )}
     >
-        <h2>{title}</h2>
-    </Link>
+      {title}
+    </h2>
   )
 };
 
