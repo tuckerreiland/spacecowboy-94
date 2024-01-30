@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const CollectionCard = async ({collectionSlug, index, length}) => {
   const collection = await serverFetch(`collections/${collectionSlug}`)
-
+  collection.description = 'This is a short description of the collection to get people interested in whatever the collection contains.'
   const position = length-index
 
   return (
@@ -28,7 +28,7 @@ const CollectionCard = async ({collectionSlug, index, length}) => {
     >
       <CollectionCardTitle position={position} index={index} title={collection.title} slug={collectionSlug}/>
       <CollectionCardImage position={position} index={index} title={collection.title} src={'https://placedog.net/300/200'}/>
-      <CollectionCardDescription position={position} index={index}/>
+      <CollectionCardDescription position={position} index={index} description={collection.description}/>
       {/* TODO: Make this a product slider, so the top products in the collection can be switched between*/}
       {/* <ProductList products={collection.products}/> */}
     </Link>

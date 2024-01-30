@@ -5,14 +5,14 @@ import Link from "next/link";
 const NavButton = ({
     children,
     name,
-    link,
+    href,
     style
 }) => {
 
   return (
     <Link
       className={cn(styles.navButton.style, style)}
-      href={link}
+      href={href}
       >
         {name||children}
     </Link>

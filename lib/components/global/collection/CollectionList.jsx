@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import CollectionCard from "./CollectionCard/CollectionCard";
 
 const CollectionList = ({collections}) => {
-    console.log('collections', collections)
   return (
     <div className={cn(
       'w-screen',

@@ -8,17 +8,17 @@ const DesktopNavbar = ({style}) => {
     <div className={cn(styles.desktopNavbar.style, style)}>
         <NavButton
             name='Shop'
-            link='/shop'
+            href='/shop'
             style={'w-fit'}
         />
         <NavButton
             name='Blog'
-            link='/blog'
+            href='/blog'
             style={'w-fit'}
         />
         <NavButton
             name='Log In'
-            link='/log-in'
+            href='/log-in'
             style={'w-fit'}
         />
     </div>

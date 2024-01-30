@@ -3,9 +3,23 @@ export const dynamic = 'force-dynamic'
 import { toKebabCase } from "@/lib/utils"
 import { db } from "@/prisma"
 
-export async function GET() {
+export async function GET(req) {
+    const tags = req.nextUrl.searchParams.get('tags')?req.nextUrl.searchParams.get('tags').split(' '):null
+    console.log('API', tags)
     try {
-        const res = await db.collection.findMany()
+        const findMany = {}
+        if (tags) {
+            findMany.where = {
+                tags: {
+                    some:{
+                        slug: {
+                            in: tags
+                        }
+                    }
+                }
+            }
+        }
+        const res = await db.collection.findMany(findMany)
         return Response.json(res)
     } catch (error) {
         return Response.json({error})

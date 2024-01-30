@@ -29,6 +29,7 @@ model Collection {
   slug      String @unique
   posts     Post[]
   products  Product[]
+  tags  Tag[]
 }
 
 model Tag {
@@ -37,6 +38,7 @@ model Tag {
   slug      String @unique
   posts     Post[]
   products  Product[]
+  collections  Collection[]
 }
 
 model Post {
