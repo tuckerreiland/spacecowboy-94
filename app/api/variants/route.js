@@ -3,9 +3,10 @@ export const dynamic = 'force-dynamic'
 import { toKebabCase } from "@/lib/utils"
 import { db } from "@/prisma"
 
-export async function GET() {
+export async function GET(req) {
     try {
-        const res = await db.variant.findMany()
+        const where = queryParse(req.nextUrl.searchParams)
+        const res = await db.variant.findMany({...where})
         return Response.json(res)
     } catch (error) {
         return Response.json({error})

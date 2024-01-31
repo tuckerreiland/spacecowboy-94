@@ -1,11 +1,13 @@
 export const dynamic = 'force-dynamic'
 
 import { toKebabCase } from "@/lib/utils"
+import { queryParse } from "@/lib/utils/api"
 import { db } from "@/prisma"
 
-export async function GET() {
+export async function GET(req) {
     try {
-        const res = await db.product.findMany()
+        const where = queryParse(req.nextUrl.searchParams)
+        const res = await db.product.findMany({...where})
         return Response.json(res)
     } catch (error) {
         return Response.json({error})

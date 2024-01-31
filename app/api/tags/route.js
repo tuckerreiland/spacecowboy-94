@@ -1,11 +1,14 @@
 export const dynamic = 'force-dynamic'
 
 import { toKebabCase } from "@/lib/utils"
+import { queryParse } from "@/lib/utils/api"
 import { db } from "@/prisma"
 
 export async function GET() {
     try {
+        const where = queryParse(req.nextUrl.searchParams)
         const res = await db.tag.findMany({
+            ...where,
             include:{
                 collections: true
             }
