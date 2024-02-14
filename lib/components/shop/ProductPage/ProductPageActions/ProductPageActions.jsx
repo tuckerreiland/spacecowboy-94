@@ -36,7 +36,7 @@ const ProductPageActions = ({variants, sizes, actions}) => {
             'bg-teal-500',
             'rounded',
             'mb-3',
-            'py-4',
+            'py-3',
             'px-5'
         )}
         name={'Add To Cart'}

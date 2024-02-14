@@ -1,23 +1,20 @@
+import { cn } from "@/lib/utils";
 import { serverFetch } from "@/lib/fetch/server-fetch";
-import ProductList from "../../../shop/ProductList";
+
 import CollectionCardTitle from "./CollectionCardTitle";
 import CollectionCardImage from "./CollectionCardImage";
-import { cn } from "@/lib/utils";
 import CollectionCardDescription from "./CollectionCardDescription";
+
 import Link from "next/link";
 
-const CollectionCard = async ({collectionSlug, index, length}) => {
+const CollectionCard = async ({path, collectionSlug, index, length}) => {
   const collection = await serverFetch(`collections/${collectionSlug}`)
   collection.description = 'This is a short description of the collection to get people interested in whatever the collection contains.'
   const position = length-index
 
   return (
-    /**
-     * TODO: make the collection list a grid element again
-     * Control col-span on Collection card, that way the logic and functionality is succcinct and not in multiple elements
-     */
     <Link
-      href={`/shop/collection/${collectionSlug}`}
+      href={`${path}${collectionSlug}`}
       className={cn(
       'grid',
       `${position<=2?`col-span-1 grid-cols-1 lg:col-start-${4-position}`:'lg:gap-6 col-span-2 lg:col-span-3 grid-cols-[repeat(1,1fr)] lg:grid-cols-[repeat(3,1fr)] lg:grid-rows-1'}`,

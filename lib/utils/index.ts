@@ -33,9 +33,9 @@ export function toCamelCase (string) {
   return camel
 }
 
-export function formatDate (date) {
+export function formatDate (date, dateFormat) {
   // TODO: format based on the location
-  return format(new Date(date), 'yyyy-MM-dd')
+  return format(new Date(date), dateFormat?dateFormat:'yyyy-MM-dd')
 }
 
 export function formatCurrency (price, locale, currency) {

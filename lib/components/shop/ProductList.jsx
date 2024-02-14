@@ -9,8 +9,9 @@ const ProductList = ({products, style}) => {
         styles.productList.style, style, 
         'grid', 
         'grid-cols-[repeat(2,1fr)]',
-        'md:grid-cols-[repeat(3,1fr)]',
-        'xl:grid-cols-[repeat(4,1fr)]',
+        'md:grid-cols-[repeat(6,1fr)]',
+        'lg:grid-cols-[repeat(8,1fr)]',
+        '2xl:grid-cols-[repeat(10,1fr)]',
         'gap-4',
     )}>
         {products.map((product)=>{

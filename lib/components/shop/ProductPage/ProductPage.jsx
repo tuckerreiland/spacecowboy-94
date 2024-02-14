@@ -1,10 +1,9 @@
-import { cn, formatCurrency } from "@/lib/utils";
-
-import { Star } from "lucide-react";
-
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import ProductInfo from "./ProductInfo/ProductInfo";
 import ProductPageActions from "./ProductPageActions/ProductPageActions";
+import ImageCarousel from "../../global/image/ImageCarousel/ImageCarousel";
+import ProductHeader from "./ProductHeader/ProductHeader";
 
 
 
@@ -106,155 +105,52 @@ const ProductPage = ({product, style}) => {
     }
   }
 
-  const heroImage = 'https://placedog.net/600/900'
+  const heroImage = 'https://placekitten.com/600/900'
   const images = [
-    'https://placedog.net/200/300',
-    'https://placedog.net/200/300',
-    'https://placedog.net/200/300',
-    'https://placedog.net/200/300'
+    'https://placekitten.com/810/1080',
+    'https://placekitten.com/810/1080',
+    'https://placekitten.com/810/1080',
+    'https://placekitten.com/810/1080'
   ]
-  
+  console.log('Product Page', product)
   return (
     <div 
       className={cn(
-        "w-full flex flex-col mx-2 md:mx-6 lg:mx-12 max-w-[calc(100%-16px)] md:max-w-[calc(100%-48px)] lg:max-w-[calc(100%-96px)]"
+        "w-full flex flex-col md:mx-6 lg:mx-12 lg:mx-24 max-w-screen md:max-w-[calc(100%-48px)] lg:max-w-[calc(100%-96px)] xl:max-w-[calc(100%-192px)]"
       )}
     >
-      {/* Might need to have a product container/wrapper that handles the flex-col */}
-      {/* <ProductHero/>*/}
         <div 
           className="md:flex relative justify-between"
         >
-          {/* <ProductImages/> */}
-          <div
-            className={cn(
-              'pt-12'
-            )}
-          >
-          {/* <ProductImageSlider/> */}
-            <div className={cn(
-              "flex gap-1.5 md:flex-col-reverse lg:flex-row lg:sticky h-fit min-w-fit w-full md:w-2/3 md:pr-8",
-              // This top needs to be site header plus ProductHeroImages padding-top
-              'top-24'
-              )}>
-              <div 
-                className="hidden md:flex md:flex-row lg:block basis-16 grow shrink-0 lg:max-w-[64px]"
-              >
-                {images.map((image)=>{
-                  return <img
-                    className="w-16 md:mr-2 lg:mb-2"
-                    src={image}
-                    alt={product.name}
-                  />
-                })
-                }
-              </div>
-              {/* <HeroImage/> */}
-              <div
-                className={cn(
-                  'flex',
-                  'w-full',
-                  'items-center',
-                  'justify-center',
-                  'relative',
-                  'max-w-[640px]',
-                  'm-auto',
-                )}
-              >
-                <img
-                  sizes="100vw"
-                  className={cn(
-                    'w-full',
-                    'h-auto'
-                  )}
-                  src={heroImage}
-                  alt={product.name}
-                />
-              </div>
-            </div>
-          </div>
-          {/* <ProductInfo/> */}
+          <ImageCarousel images={images} product={product}/>
           <div className={cn(
             'bg-pink-500',
             'lg:max-w-[440px]',
             'min-h-[300px]',
             'w-full',
-            'md:w-1/3',
-            'lg:pt-12'
+            'md:w-1/2',
+            'lg:w-1/3',
+            'md:pt-12'
           )}>
-            {/* <ProductHeader/> */}
-            <div className={cn(
-              'flex',
-              'justify-between',
-              'items-start',
-              'w-full',
-              'mb-6'
-            )}>
-              <div className={cn(
-                    'w-full'
-                  )}>
-                {/* <ProductTitle/> */}
-                <h1
-                  className={cn(
-                    'text-3xl',
-                    'w-full'
-                  )}
-                >
-                  {product.name}
-                </h1>
-                {/* <Ratings/> */}
-                    <Link
-                      className={cn(
-                        'w-full',
-                        'flex',
-                        'items-center',
-                        'mb-4'
-                      )}
-                      href={'#reviews'}
-                    >
-                      <div className={cn(
-                        'flex',
-                        'relative'
-                      )}>
-                        <Star
-                          size={18}
-                        />
-                        <Star
-                          size={18}
-                        />
-                        <Star
-                          size={18}
-                        />
-                        <Star
-                          size={18}
-                        />
-                        <Star
-                          size={18}
-                        />
-                      </div>
-                      <span>
-                        {`(${product.reviews||123})`}
-                      </span>
-                    </Link>
-                {/* <Price/> */}
-                <p
-                  className={cn(
-                    'mb-3'
-                  )}
-                >{formatCurrency(product.price)}</p>
-              </div>
-            </div>
+          <div
+            className={cn(
+              'pt-4',
+              'md:pt-0',
+              'px-[2.5vw]',
+              'md:px-0',
+            )}
+          >
+            <ProductHeader product={product}/>
             <ProductPageActions 
               variants={variants}
               sizes={sizes}
               actions={product.actions}
             />
-
             <ProductInfo productInfo={productInfo}/>
+          </div>
           </div>
         </div>
     </div>
-    
   )
 };
 

@@ -4,11 +4,11 @@ import { toKebabCase } from "@/lib/utils"
 import { db } from "@/prisma"
 
 export async function GET(req, {params}) {
-    const id = params.id
+    const slug = params.slug
     try {
         const res = await db.post.findUnique({
             where: {
-                id: id
+                slug: slug
             },
             include: {
                 collections: true
@@ -22,12 +22,12 @@ export async function GET(req, {params}) {
 }
 
 export async function PUT(req, {params}) {
-    const id = params.id
+    const slug = params.slug
     try {
         const data = await req.json()
         const update = {
             where: {
-                id: id
+                slug: slug
             },
             data:{
                 ...data,
@@ -75,11 +75,11 @@ export async function PUT(req, {params}) {
 }
 
 export async function DELETE(req, {params}) {
-    const id = params.id
+    const slug = params.slug
     try {
         await db.post.update({
             where: {
-                id: id
+                slug: slug
             },
             data: {
                 collections: {
@@ -92,7 +92,7 @@ export async function DELETE(req, {params}) {
         })
         const res = await db.post.delete({
             where: {
-                id: id
+                slug: slug
             }
         })
         return Response.json(res)

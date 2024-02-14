@@ -8,7 +8,7 @@ import FooterBottom from "./FooterBottom";
 const Footer = ({style}) => {
   return (
     <footer 
-        className={cn(styles.footer.style, style)}
+        className={cn(styles.footer.style, style,)}
     >
       <FooterWrapper>
         <FooterTop>

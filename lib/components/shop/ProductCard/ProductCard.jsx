@@ -10,11 +10,10 @@ const ProductCard = ({product, style}) => {
   return (
     <Link 
       className={cn(
-        styles.productCard.style, style,
-        'flex',
-        'flex-col'
+        'mb-8',
+        'md:col-span-2'
       )}
-      href={`shop/${product.slug}`}
+      href={`/shop/${product.slug}`}
     >
     <ProductMedia
       product={product}

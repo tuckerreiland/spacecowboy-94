@@ -9,7 +9,7 @@ export default async function Page({params}) {
 	return (
 		<div className="h-full w-full">
 			<CollectionPage collection={collection}/>
-			<ProductList products={collection.products}/>
+			{/* <ProductList products={collection.products}/> */}
 		</div>
 	)
   }

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import CollectionCard from "./CollectionCard/CollectionCard";
 
-const CollectionList = ({collections}) => {
+const CollectionList = ({path, collections}) => {
   return (
     <div className={cn(
       'w-screen',
@@ -11,12 +11,13 @@ const CollectionList = ({collections}) => {
       'grid-cols-2',
       'lg:grid-cols-3',
       'gap-2',
+      'px-2',
       'lg:gap-6',
-      'px-8',
+      'lg:px-8',
       'py-20'
     )}>
       {collections.map((collection, index)=> {
-        return <CollectionCard length={collections.length} key={collection.slug} index={index} collectionSlug={collection.slug}/>
+        return <CollectionCard path={path} length={collections.length} key={collection.slug} index={index} collectionSlug={collection.slug}/>
       })}
     </div>
   )

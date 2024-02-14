@@ -9,9 +9,14 @@ const ProductCardActions = ({product}) => {
         console.log("Product ID", product)
     }
   return (
-    <div>
+    <div
+      className={cn(
+        'w-full'
+      )}
+    >
       <Button
         name={'Add to Cart'}
+        className={'w-full'}
         action={()=>addToCart(product)}
       />
     </div>

@@ -18,7 +18,8 @@ export default async function Page() {
 				title={'Home Page Banner'}
 				content={'Jib lee draft landlubber or just lubber overhaul come about barque barkadeer hulk fore. Splice the main brace furl Brethren of the Coast run a shot across the bow no prey, no pay crimp reef spirits measured fer yer chains topmast. Lanyard cable pressgang gangplank Jack Ketch jack pink provost black jack killick.'}
 			/>
-			<CollectionList collections={collections}/>
+			{/* TODO: add path prop so that I can have collections on the home page go to /[slug], collections on the product page go to /shop/collection/[slug] and blog go to /blog/collection/[slug]*/}
+			<CollectionList path={'/'} collections={collections}/>
 		</div>
 	)
   }

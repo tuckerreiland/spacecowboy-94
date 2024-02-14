@@ -1,25 +1,31 @@
 import { styles } from "@/lib/styles";
 import { cn } from "@/lib/utils";
 
-import Image from "next/image";
 
 const ProductMedia = ({src}) => {
   return (
     <div 
-        className={cn(styles.productCardImage.style,
-          'flex',
-          'w-full',
-          'items-center',
-          'justify-center',
-          'relative'
+        className={cn(
+          'relative',
+          'mb-4',
+
         )}
       >
         <img
-            src={src?src:'https://placedog.net/300/200'}
-            sizes="100vw"
+            src={src?src:'https://placedog.net/584/784'}
+            // sizes="100vw"
+            width='588'
+            height='784'
             className={cn(
               'w-full',
-              'h-auto'
+              'max-w-full',
+              'h-auto',
+              'overflow-clip',
+              'align-middle',
+              'aspect-ration-[3/4]',
+              'object-contain',
+              '[overflow-clip-margin: content-box;]',
+              'rounded-md',
             )}
           />
       </div>

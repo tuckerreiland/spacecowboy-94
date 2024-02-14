@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/blx7ido.css"/>
 		  </head>
-      <body className={cn(styles.colors.globalLayout)}>
+      <body className={cn(styles.colors.globalLayout,)}>
         <Header/>
         <Main>          
           {children}
